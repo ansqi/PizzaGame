@@ -16,7 +16,7 @@ namespace PizzaGame
             Console.ReadKey();
             while (true)
             {
-                pizzas = new Random().Next(11, 50);
+                pizzas = new Random().Next(11, 500);
                 Console.WriteLine($"are u playing with {pizzas} pizzas");
                 PlayPizzaGame(allbites, null, 0);
                 Console.WriteLine($"wanna play again?");
@@ -47,15 +47,14 @@ namespace PizzaGame
                 }
                 //eat
                 currentBite = availableBites.Where(a => a < pizzas).First();
-                pizzas = pizzas - currentBite;
+                pizzas -= currentBite;
                 Console.WriteLine($"{PrintPlayer(player)} have eaten {currentBite} pizzas. {pizzas} pizzas left on table(tried to avoid defeat)");
-
                 PlayPizzaGame(AvailableBites(currentBite), currentBite, ++player);
             }
             else // eat case
             {
                 int currentBite = GetBite(AvailableBites(bite), random);
-                pizzas = pizzas - currentBite;
+                pizzas -= currentBite;
                 Console.WriteLine($"{PrintPlayer(player)} have eaten {currentBite} pizzas. {pizzas} pizzas left on table");
                 PlayPizzaGame(AvailableBites(currentBite), currentBite, ++player);
             }
