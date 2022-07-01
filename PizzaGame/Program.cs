@@ -12,7 +12,7 @@ namespace PizzaGame
         public static Random random = new Random();
         static void Main(string[] args)
         {
-            Console.WriteLine($"Press any Key to play pizza game.");
+            Console.WriteLine($"Press any Key to play pizza game. This is the branch 1");
             Console.ReadKey();
             while (true)
             {
